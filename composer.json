@@ -1,0 +1,32 @@
+{
+    "name": "lincoln/notification",
+    "description": "This ia library that user notification general",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lincoln Aurélio",
+            "email": "lincoln.aurelio@gmail.com",
+            "homepage": "https://www.upinside.com.br",
+            "role": "Developer"
+        },
+        {
+            "name": "Robson V. Leiter",
+            "email": "robson@gmail.com",
+            "homepage": "https://www.upinside.com.br",
+            "role": "CEO and Founder"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "phpmailer/phpmailer": "6.1.7"
+    },
+    "config": {
+        "vendor-dir": "lib_ext"
+    },
+    "autoload": {
+        "psr-4": {
+            "Notification\\": "_app"
+        }
+    }
+}
