@@ -26,6 +26,8 @@ composer.phar
 .nfs*
 
 ### NetBeans ###
+nbproject/
+nbproject
 **/nbproject/private/
 **/nbproject/Makefile-*.mk
 **/nbproject/Package-*.bash
