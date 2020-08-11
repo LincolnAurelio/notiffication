@@ -12,9 +12,7 @@ To use the library, simply require the composer to autoload, invoke the class an
 
 ``sh
 <? php
-
 require __DIR__. '/vendor/autoload.php';
-
 USE Notification \ Email;
 
 $ email = new Email (2, "mail.host.com", "your@email.com", "your-pass", "smtp secure (tls / ssl)", "port (587)",
