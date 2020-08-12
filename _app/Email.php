@@ -8,21 +8,22 @@ class Email {
     
     private $mail = \stdClass::Class;
     
-    public function __construct()
+    public function __construct($smtpDebug, $host, $user, $pass, $smtpSecure, $port, $setFromEmail, $setFromName)
     {
         $this->mail = new PHPMailer(true);
-        $this->mail->SMTPDebug = 2;                                         // Enable verbose debug output
-        $this->mail->isSMTP();                                            // Send using SMTP
-        $this->mail->Host       = 'mail.abrigoidosossvp.org';             // Set the SMTP server to send through
-        $this->mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-        $this->mail->Username   = 'contato@abrigoidosossvp.org';          // SMTP username
-        $this->mail->Password   = '$C0nt@t0$';                            // SMTP password
-        $this->mail->SMTPSecure = 'ssl';                                  // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-        $this->mail->Port       = 465; 
+        $this->mail->SMTPDebug = $smtpDebug; //2;                                         
+        $this->mail->isSMTP();                                            
+        $this->mail->Host       = $host; //'mail.abrigoidosossvp.org';
+        $this->mail->SMTPAuth   = true;                                   
+        $this->mail->Username   = $user; //'contato@abrigoidosossvp.org';
+        $this->mail->Password   = $pass; //'$C0nt@t0$';
+        $this->mail->SMTPSecure = $smtpSecure; //'ssl';
+        $this->mail->Port       = $port; //465; 
         $this->mail->CharSet = 'utf-8';
         $this->mail->setLanguage('br');
         $this->mail->isHTML(true);
-        $this->mail->setFrom('contato@abrigoidosossvp.org', 'Equipe Abrigo');
+        $this->mail->setFrom($setFromEmail, $setFromName);
+        //$this->mail->setFrom('contato@abrigoidosossvp.org', 'Equipe Abrigo');
         //$this->mail->SMTPAuth = false;
         //$this->mail->SMTPSecure = false;
     }
